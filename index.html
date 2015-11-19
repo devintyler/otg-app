@@ -6,32 +6,94 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
         $(document).ready(function() {
-            $("li").click(function(event) {
-                console.log($(this).data('title'));
+
+            pageObj = function(){
+                this.filters = "";
+            };
+
+            var page = new pageObj();
+            var group1 = $('ul#group1');
+            var group2 = $('ul#group2');
+            var group3 = $('ul#group3');
+            var item = $('li.track');
+            var genreCounter = 0;
+            initPage();
+
+            function initPage(){
+                group2.hide();
+                group3.hide();
+                item.hide();
+                console.log(page);
+            }
+
+            $('li').click(function(){
+                if (genreCounter < 2){
+                    page.filters += $(this).attr('id') + " ";
+                } else {
+                    page.filters += $(this).attr('id');
+                }
+                genreCounter++;
             });
+
+            group1.click(function(){
+                $(this).hide();
+                group2.show();
+                console.log(page);
+            });
+
+            group2.click(function(){
+                $(this).hide();
+                group3.show();
+                console.log(page);
+            });
+
+            group3.click(function(){
+                $(this).hide();
+                item.show();
+                console.log(page);
+            });
+
+            $(this).hide();
+
         });
     </script>
 </head>
-<body>
+    <body>
 
-<embedded shit></embedded>
+        <ul id="group1">
+            <li id="green"><h1>GREEN</h1></li>
+            <li id="blue"><h1>BLUE</h1></li>
+            <li id="red"><h1>RED</h1></li>
+        </ul>
 
-<li class="track" data-title="orchestral happy" data-artist="Ronny Mraz" data-duration="1:39" id="yui_3_17_2_3_1447894973759_1478">
-    <div class="track-progress-bar" id="yui_3_17_2_3_1447894973759_1477">
-        <div class="bg bar"></div>
-        <div class="load-bar bar"></div>
-        <div class="play-bar bar" style="width: 100%;">
-            <!-- <a href="#" class="scrubber"></a> -->
-        </div>
-    </div>
-    <div class="track-meta">
-        <div class="track-time">1:39</div>
-    </div>
-    <div class="track-info" id="yui_3_17_2_3_1447894973759_1483">
-        <div class="title" id="yui_3_17_2_3_1447894973759_1482"><a class="link" href="http://static1.squarespace.com/static/5643be43e4b021eb442c9030/5643c5b6e4b0b0751fe9fd4d/5643c5c8e4b0a83ded295e54/1447286737322/skylab+mp3.mp3" id="yui_3_17_2_3_1447894973759_1481" target="_top">orchestral happy</a></div>
-        <div class="artist" id="yui_3_17_2_3_1447894973759_1485">Ronny Mraz</div>
-    </div>
-</li>
+        <ul id="group2">
+            <li id="cat"><h2>CAT</h2></li>
+            <li id="dog"><h2>DOG</h2></li>
+            <li id="beaver"><h2>BEAVER</h2></li>
+        </ul>
 
-</body>
+        <ul id="group3">
+            <li id="rose"><h3>ROSE</h3></li>
+            <li id="daisy"><h3>DAISY</h3></li>
+            <li id="lilac"><h3>LILAC</h3></li>
+        </ul>
+
+        <li class="track" data-title="orchestral happy" data-artist="Ronny Mraz" data-duration="1:39" id="yui_3_17_2_3_1447894973759_1478">
+            <div class="track-progress-bar" id="yui_3_17_2_3_1447894973759_1477">
+                <div class="bg bar"></div>
+                <div class="load-bar bar"></div>
+                <div class="play-bar bar" style="width: 100%;">
+                     <a href="#" class="scrubber"></a>
+                </div>
+            </div>
+            <div class="track-meta">
+                <div class="track-time">1:39</div>
+            </div>
+            <div class="track-info" id="yui_3_17_2_3_1447894973759_1483">
+                <div class="title" id="yui_3_17_2_3_1447894973759_1482"><a class="link" href="http://static1.squarespace.com/static/5643be43e4b021eb442c9030/5643c5b6e4b0b0751fe9fd4d/5643c5c8e4b0a83ded295e54/1447286737322/skylab+mp3.mp3" id="yui_3_17_2_3_1447894973759_1481" target="_top">orchestral happy</a></div>
+                <div class="artist" id="yui_3_17_2_3_1447894973759_1485">Ronny Mraz</div>
+            </div>
+        </li>
+
+    </body>
 </html>
