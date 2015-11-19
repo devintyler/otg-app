@@ -6,30 +6,96 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
         $( document ).ready(function() {
-            $("li").click(function(event) {
-                console.log($(this).data('title'));
-            });
+            var tracks = $("ul.tracks").filter("li");
+            $("ul.tracks").children().each(function(index, value){
+                $(this).hide();
+            })
+
+            $("ul.tracks").children().each(function(index, value){
+                if($(this).data('artist') === "organic-medium-light"){
+                    $(this).show();
+                }
+            })
         });
     </script>
 </head>
 <body>
 
-<li class="track" data-title="orchestral happy" data-artist="Ronny Mraz" data-duration="1:39" id="yui_3_17_2_3_1447894973759_1478">
-    <div class="track-progress-bar" id="yui_3_17_2_3_1447894973759_1477">
-        <div class="bg bar"></div>
-        <div class="load-bar bar"></div>
-        <div class="play-bar bar" style="width: 100%;">
+<ul class="tracks">
+
+    
+      <li class="track" data-title="orchestral happy" data-artist="Ronny Mraz" data-duration="1:39">
+
+        <div class="track-progress-bar">
+          <div class="bg bar"></div>
+          <div class="load-bar bar"></div>
+          <div class="play-bar bar">
             <!-- <a href="#" class="scrubber"></a> -->
+          </div>
         </div>
-    </div>
-    <div class="track-meta">
-        <div class="track-time">1:39</div>
-    </div>
-    <div class="track-info" id="yui_3_17_2_3_1447894973759_1483">
-        <div class="title" id="yui_3_17_2_3_1447894973759_1482"><a class="link" href="http://static1.squarespace.com/static/5643be43e4b021eb442c9030/5643c5b6e4b0b0751fe9fd4d/5643c5c8e4b0a83ded295e54/1447286737322/skylab+mp3.mp3" id="yui_3_17_2_3_1447894973759_1481" target="_top">orchestral happy</a></div>
-        <div class="artist" id="yui_3_17_2_3_1447894973759_1485">Ronny Mraz</div>
-    </div>
-</li>
+
+        <div class="track-meta">
+          <div class="track-time">1:39</div>
+        </div>
+
+        <div class="track-info">
+          <div class="title"><a class="link" href="http://static1.squarespace.com/static/5643be43e4b021eb442c9030/5643c5b6e4b0b0751fe9fd4d/5643c5c8e4b0a83ded295e54/1447286737322/skylab+mp3.mp3">orchestral happy</a></div>
+          <div class="artist">Ronny Mraz</div>
+        </div>
+
+      </li>
+
+    
+      <li class="track" data-title="skylab theme test" data-artist="organic-medium-light" data-duration="1:39">
+
+        <div class="track-progress-bar">
+          <div class="bg bar"></div>
+          <div class="load-bar bar"></div>
+          <div class="play-bar bar">
+            <!-- <a href="#" class="scrubber"></a> -->
+          </div>
+        </div>
+
+        <div class="track-meta">
+          <div class="track-time">1:39</div>
+        </div>
+
+        <div class="track-info">
+          <div class="title"><a class="link" href="http://static1.squarespace.com/static/5643be43e4b021eb442c9030/5643c5b6e4b0b0751fe9fd4d/564d2862e4b08e7c2d4fbf1d/1447897263562/skylab+theme+mp3.mp3">skylab theme test</a></div>
+          <div class="artist">organic-medium-light</div>
+        </div>
+
+      </li>
+
+    
+      <li class="track" data-title="test 2" data-artist="electronic slow dark" data-duration="1:39">
+
+        <div class="track-progress-bar">
+          <div class="bg bar"></div>
+          <div class="load-bar bar"></div>
+          <div class="play-bar bar">
+            <!-- <a href="#" class="scrubber"></a> -->
+          </div>
+        </div>
+
+        <div class="track-meta">
+          <div class="track-time">1:39</div>
+        </div>
+
+        <div class="track-info">
+          <div class="title"><a class="link" href="http://static1.squarespace.com/static/5643be43e4b021eb442c9030/5643c5b6e4b0b0751fe9fd4d/564d28cae4b02a51ffc06611/1447897322443/skylab+theme+mp3.mp3">test 2</a></div>
+          <div class="artist">electronic slow dark</div>
+        </div>
+
+      </li>
+
+    
+
+  </ul>
+</section>
+        </div>
+      </section>
+
 
 </body>
 </html>
